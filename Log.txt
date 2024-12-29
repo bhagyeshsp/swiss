@@ -1,0 +1,10 @@
+
+I have disabled a few utility classes in the utilities.scss related to floats. Need to comb through all includes and layout files to convert the dependent classes to modern styles.
+
+
+
+***
+27 Aug 2024 Log:
+- Created new utility class .header-container and related media queries styles specifically the homepage header.
+- Changed the header.html in _includes to flexbox. Need to make such changes to all relevant layout and includes.
+

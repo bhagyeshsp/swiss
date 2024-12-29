@@ -3,7 +3,7 @@
   font-size: $h0-mobile;
   line-height: 1.0125;
   margin-top: 0.85em;
-  word-wrap: break-word;
+  word-wrap: normal; //changed from break-word
 
   @media (min-width: $breakpoint-lg) {
     font-size: $h0-desktop;
@@ -49,7 +49,9 @@
 .text-accent { color: $color-text-accent; } // used for date in post list and home link
 
 /* Layout utilities */
-.container { max-width: $container-width; }
+.container {
+max-width: $container-width;
+}
 
 .col-1 { width: (1 / 12 * 100%); }
 .col-2 { width: (2 / 12 * 100%); }
@@ -73,17 +75,17 @@
 
 .table { display: table !important; }
 
-.left { float: left; }
-.right { float: right; }
+// .left { float: left; }
+// .right { float: right; }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table
-}
-.clearfix:after { clear: both }
+// .clearfix:before,
+// .clearfix:after {
+//   content: " ";
+//   display: table
+// }
+// .clearfix:after { clear: both }
 
-.align-middle { vertical-align: middle; }
+// .align-middle { vertical-align: middle; }
 
 /* Padding */
 .px-0 { padding-left: 0; padding-right:  0 }
@@ -180,3 +182,108 @@
     text-decoration: none !important;
   }
 }
+
+// Flexbox utilities
+
+// Flex container
+.flex { display: flex !important; }
+.inline-flex { display: inline-flex !important; }
+
+// Flex direction
+.flex-row { flex-direction: row !important; }
+.flex-row-reverse { flex-direction: row-reverse !important; }
+.flex-column { flex-direction: column !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+
+// Flex wrap
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse !important; }
+
+// Justify content
+.justify-start { justify-content: flex-start !important; }
+.justify-end { justify-content: flex-end !important; }
+.justify-center { justify-content: center !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-around { justify-content: space-around !important; }
+.justify-evenly { justify-content: space-evenly !important; }
+
+// Align items
+.items-start { align-items: flex-start !important; }
+.items-end { align-items: flex-end !important; }
+.items-center { align-items: center !important; }
+.items-baseline { align-items: baseline !important; }
+.items-stretch { align-items: stretch !important; }
+
+// Align content
+.content-start { align-content: flex-start !important; }
+.content-end { align-content: flex-end !important; }
+.content-center { align-content: center !important; }
+.content-between { align-content: space-between !important; }
+.content-around { align-content: space-around !important; }
+.content-stretch { align-content: stretch !important; }
+
+// Align self
+.self-auto { align-self: auto !important; }
+.self-start { align-self: flex-start !important; }
+.self-end { align-self: flex-end !important; }
+.self-center { align-self: center !important; }
+.self-baseline { align-self: baseline !important; }
+.self-stretch { align-self: stretch !important; }
+
+// ... existing code ...
+
+// Flex grow
+.flex-grow-i { flex-grow: inherit !important;}
+.flex-grow-0 { flex-grow: 0 !important; }
+.flex-grow-1 { flex-grow: 1 !important; }
+.flex-grow-2 { flex-grow: 2 !important; }
+.flex-grow-3 { flex-grow: 3 !important; }
+.flex-grow-4 { flex-grow: 4 !important; }
+.flex-grow-5 { flex-grow: 5 !important; }
+
+// Flex shrink
+.flex-shrink-i { flex-shrink: inherit !important;}
+.flex-shrink-0 { flex-shrink: 0 !important; }
+.flex-shrink-1 { flex-shrink: 1 !important; }
+.flex-shrink-2 { flex-shrink: 2 !important; }
+.flex-shrink-3 { flex-shrink: 3 !important; }
+.flex-shrink-4 { flex-shrink: 4 !important; }
+.flex-shrink-5 { flex-shrink: 5 !important; }
+
+
+// Header elements modifications
+.header-container{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+
+.header-description {
+  width: max-content; /* Ensure it is as long as its content only
+  white-space: normal; /* Allow wrapping of text */
+  overflow: visible; /* Prevent text from being clipped */
+  text-align: left; /* Align text appropriately */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Stack items vertically */
+    flex-wrap: nowrap; /* Prevent wrapping issues */
+  }
+  
+  .header-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-description {
+    width: 100%;
+    text-align: center; /* Center align text on smaller screens for better readability */
+    margin-left: 0; /* Remove unnecessary left margin */
+    text-wrap: wrap;
+  }
+}
+
