@@ -66,6 +66,33 @@ max-width: $container-width;
 .col-11 { width: (11 / 12 * 100%); }
 .col-12 { width: 100%; }
 
+// Flexbox grid system to replace
+// .flex-grid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 0 -1rem;
+// }
+
+// .flex-col {
+//   padding: 0 1rem;
+// }
+
+// .flex-col-1 { flex: 0 0 8.333333%; }
+// .flex-col-2 { flex: 0 0 16.666667%; }
+// .flex-col-3 { flex: 0 0 25%; }
+// .flex-col-4 { flex: 0 0 33.333333%; }
+// .flex-col-5 { flex: 0 0 41.666667%; }
+// .flex-col-6 { flex: 0 0 50%; }
+// .flex-col-7 { flex: 0 0 58.333333%; }
+// .flex-col-8 { flex: 0 0 66.666667%; }
+// .flex-col-9 { flex: 0 0 75%; }
+// .flex-col-10 { flex: 0 0 83.333333%; }
+// .flex-col-11 { flex: 0 0 91.666667%; }
+// .flex-col-12 { flex: 0 0 100%; }
+
+
+
+
 @media (max-width: $breakpoint-lg) {
   .sm-width-full { width: 100% !important; }
 }
@@ -231,7 +258,10 @@ max-width: $container-width;
 .self-baseline { align-self: baseline !important; }
 .self-stretch { align-self: stretch !important; }
 
-// ... existing code ...
+// Flex grow-shrink-baseline
+
+.flex-gsb-auto { flex: auto;}
+.flex-gsb-content { flex: content }
 
 // Flex grow
 .flex-grow-i { flex-grow: inherit !important;}
