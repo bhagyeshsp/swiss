@@ -315,5 +315,16 @@ justify-content: center;
     margin-left: 0; /* Remove unnecessary left margin */
     text-wrap: wrap;
   }
+
+  .footer-container { 
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
 }
 
+// Footer container flexbox styling
+.footer-container { 
+  display: flex;
+  justify-content: space-between;
+}
