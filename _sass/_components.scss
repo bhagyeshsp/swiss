@@ -19,10 +19,11 @@ code {
 .prose {
 
   a {
-    text-decoration: underline dotted;
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      color: $color-text-accent;
     }
   }
 
@@ -69,17 +70,17 @@ code {
     p {
       font-size: 24px;
     }
+    // Disabled the responsiveness as it was unnecessary
+    // @media (min-width: $breakpoint-lg) {
+    //   padding-left: $spacer-3;
+    //   margin: $spacer-4 0 $spacer-4 -40px;
+    //   max-width: (11 / 10 * 100%);
 
-    @media (min-width: $breakpoint-lg) {
-      padding-left: $spacer-3;
-      margin: $spacer-4 0 $spacer-4 -40px;
-      max-width: (11 / 10 * 100%);
+    //   p {
+    //     font-size: 32px;
+    //   }
 
-      p {
-        font-size: 32px;
-      }
-
-    }
+    // }
 
   }
 
