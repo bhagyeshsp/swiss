@@ -5,16 +5,17 @@
     </a>
   </div>
   <div class="flex justify-end items-center sm-width-full">
-    <ul class="list-reset py-1">
-      {% for my_page in site.pages %}
-        {% if my_page.title %}
+    <ul class="list-reset py-1 mr-1">
+      {% assign sorted_pages = site.pages | sort: "order" %}
+      {% for my_page in sorted_pages %}
+        {% if my_page.show_in_nav != false and my_page.title %}
         <li class="inline-block">
           <a class="link-primary mr-2 mr-lg-0 ml-lg-2" href="{{ my_page.url | prepend: site.baseurl }}">
             {{ my_page.title }}
           </a>
         </li>
         {% endif %}
-      {% endfor %}
+        {% endfor %}
     </ul>
   </div>
 </header>
