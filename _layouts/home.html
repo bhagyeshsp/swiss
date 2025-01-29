@@ -8,16 +8,19 @@
     <div>
 
       <header class="header-background">
-
-        <div class="border-bottom-thick header-border flex justify-end">
-          <ul class="list-reset py-1 header-text font-smoothing flex">
-            {% for my_page in site.pages %}
-              {% if my_page.title %}
-              <li>
-                <a class=" link-primary header-link mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-              </li>
-              {% endif %}
-            {% endfor %}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!-- Fetches the audio player icon for pronounciation -->
+        <div class="border-bottom-thick header-border flex justify-end items-center sm-width-full">
+          <ul class="list-reset py-1 mr-2 header-text font-smoothing flex">
+            {% assign sorted_pages = site.pages | sort: "order" %}
+            {% for my_page in sorted_pages %}
+        {% if my_page.show_in_nav != false and my_page.title %}
+        <li class="inline-block">
+          <a class="link-primary mr-2 mr-lg-0 ml-lg-2" href="{{ my_page.url | prepend: site.baseurl }}">
+            {{ my_page.title }}
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
           </ul>
         </div>
 
@@ -37,13 +40,69 @@
      
 
       <div class="container mx-auto px-2 py-2">
-          {% include landing.html %}
-      </div>
+        <div class="prose">
+          <br />
+          <br />
+          <p>
+            This is the home page of a Tech & Design consultancy firm: Sisyphus
+            Consulting.
+            <span
+              onclick="pronounceSisyphus()"
+              style="cursor: pointer; font-size: 14px; color: #74c0fc"
+            >
+              (si-sə-fəs <i class="fa-sharp fa-solid fa-volume-high"> )</i>
+            </span>
+          </p>
+        
+          <p>
+            We generate profit and impact for businesses using our tech and design
+            solutions.
+          </p>
+        
+          <p>We get it, it is confusing out there.</p>
+          <p>
+            One day you hear this solution is right, come next day, you hear the other
+            one is better. And you are left at the mercy of solution providers who have
+            an incentive to keep things complex.
+          </p>
+          <p>
+            We don't believe in making tech and design solutions more complex than they
+            have to be. Because if you don't get it or your people don't get it, the
+            solution won't last long. And that's not something we want. We want our <a href="/consultancy/">solutions</a> to last long.
+          </p>
+          <p>
+            By the way, do you feel that we share the same way of thinking? Then I'm keen on having you in my small circle of homo-thinkers. It is soo difficult to find people who align with you. So, I'm not letting that opportunity pass. Inviting you to join my free email notes.
+          </p>
+
+            {% include newsletter.html %}
+
+          <br>
+          
+          <p>
+            Thanks for your interest and support. As always, we're grateful and honoured to have worked with some of the most amazing people on Earth.
+          </p>
+          <p class="flex justify-end"><em><a href="/about">— Bhagyesh Pathak</a></em></p>
+
+
+        </div>
+        
+          
+          
+
+
+      </div> 
 
     </div>
 
     {% include footer.html %}
-
+    <script>
+      function pronounceSisyphus() {
+          const utterance = new SpeechSynthesisUtterance('Sisyphus Consulting');
+          utterance.lang = 'en-In'; // Adjust language as needed
+          speechSynthesis.speak(utterance);
+      }
+  </script>
+  
   </body>
 
 </html>
