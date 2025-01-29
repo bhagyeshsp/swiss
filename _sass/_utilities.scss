@@ -36,6 +36,8 @@
 .border-top-thick { border-top: 2px solid; border-color: currentColor; }
 .border-top-thin { border-top: 1px solid; border-color: currentColor; }
 .border-0 { border: 0; }
+.border-right-thick {border-right: 2px solid; border-color: currentColor;}
+.border-left-thick {border-left: 2px solid; border-color: currentColor;}
 
 
 /* Theme color utilities */
@@ -298,10 +300,10 @@ justify-content: center;
 }
 
 // Footer container flexbox styling
-.footer-container { 
-  display: flex;
-  justify-content: space-around;
-}
+// .footer-container { 
+//   display: flex;
+//   justify-content: space-around;
+// }
 
 // previous-next navigation flexbox styling
 .post-navigation {
@@ -315,6 +317,59 @@ justify-content: center;
   flex: 1;
   max-width: 50%;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  max-width: 75%;
+  
+  img {
+      max-width: 50%;
+  }
+
+}
+
+.image-container-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 1rem auto;
+  
+  img {
+    max-width: 75%;
+  }
+  
+  p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: $color-text-accent;
+    text-align: center;
+    width: 100%;
+  }
+
+  &.img-extra-small img {
+    max-width: 10%;
+  }
+
+  &.img-small img {
+    max-width: 25%;
+  }
+  
+  &.img-medium img {
+    max-width: 50%;
+  }
+  
+  &.img-large img {
+    max-width: 75%;  // This is your current default size
+  }
+  
+  &.img-full img {
+    max-width: 100%;
+  }
+
+}
+
 
 /* Media Query for Small Screens */
 @media (max-width: 768px) {
@@ -347,4 +402,73 @@ justify-content: center;
   .post-nav-item {
     max-width: 100%;
   }
+
+  .image-container {
+    flex-direction: column;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .image-container-caption {
+    max-width: 100%;
+    
+    img {
+      max-width: 100% !important;
+    }
+  }
+}
+
+// Styles the tags on case studies page
+.tag-badge {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border-radius: 12px;
+  background-color: #f0f0f0; /* Adjust color as needed */
+  color: #333; /* Adjust text color as needed */
+  font-weight: bold;
+}
+
+// Styles the copy button and tool tips in the footer
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+}
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: #333;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.copy-btn:hover .tooltip {
+  opacity: 1;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border: none;
+  border-radius: 12px;
+  background-color: #333 ; /* Adjust color as needed */
+  color: #f0f0f0; /* Adjust text color as needed */
+  font-weight: bold;
+
+  &:hover {
+    background: $color-text-accent;
+  
+}
+
 }
