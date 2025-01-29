@@ -59,3 +59,11 @@ When your theme is released, only the files in `_layouts`, `_includes`, and `_sa
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+# Embed pdf in the site
+
+```html
+<div style="width: 100%; height: 0; padding-bottom: 100%; position: relative;">
+  <object data="{{ site.url }}{{ site.baseurl }}/assets/Data_Analyst_AI_Assistant.pdf" type="application/pdf" style="position: absolute; width: 100%; height: 100%;"></object>
+</div>
+```
